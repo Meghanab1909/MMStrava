@@ -9,38 +9,96 @@
         <script>
             function hide(){
                 document.querySelector('.filters-list').style.display = "none";
+                document.querySelector('.showcart').style.display = "none";
             }
-            var count = 0
-            function hideShow(){
-                if(count == 0)
+            var count1= 0
+            var count2=0
+
+            //need to change to if else instead
+
+            function hideShow1(){
+                
+                if(count1 == 0)
                 {
-                    count = 1;
+                    count1 = 1;
                     document.querySelector('.filters-list').style.display = "block";
                 }
                 else
                 {
-                    count = 0;
+                    count1 = 0;
                     document.querySelector('.filters-list').style.display = "none";
+                }
+            }
+            function hideShow2(){
+                
+                if(count2 == 0)
+                {
+                    count2 = 1;
+                    document.querySelector('.showcart').style.display = "block";
+                }
+                else
+                {
+                    count2 = 0;
+                    document.querySelector('.showcart').style.display = "none";
                 }
             }
         </script>
     </head>
     <body onload="hide()">
+
         <div class = "topnav">
-            <a href = "#settings" style="font-size: 34px; color: gray">⚙</a>
-            <a href = "#changeview" style = "color: gray">◰</a>
-            <a href = "#cart" style="font-size: 31px">🛒</a>
-            <input type = "text" placeholder="Search...">
-            <button><img src = "./search-icon1.png"></button>
+            <div>
+                <input type = "text" placeholder="Search...">
+                <button id="searchbt" type="button"><img src = "./search-icon1.png" alt="search"></button>  
+            </div>
+            <div class="extras">
+                <a id="setting" href = "#settings">⚙</a>
+                <a id="view" href = "#changeview">◰</a>
+                <button type="button" id="cart"  onclick="hideShow2()">🛒</button>
+            </div></div>
+
+        <div class="showcart">
+            <div id="head">🛒 My Cart </div>
+            <div class="items">
+                <div id="headers">
+                    <p>Qn</p>
+                    <p>Item</p>
+                    <p>Price</p>
+                </div>
+                <div id="list">
+                    <p>2</p>
+                    <p>Ice Cream - Chocolate</p>
+                    <p>₹325</p>
+                </div>
+                <div id="list">
+                    <p>2</p>
+                    <p>Ice Cream - Vanilla</p>
+                    <p>₹325</p>
+                </div>
+                <div id="list">
+                    <p>3</p>
+                    <p>Ice Cream</p>
+                    <p>₹325</p>
+                </div>
+                <div id="total">
+                    <p>Total: </p>
+                    <p>₹2275.00</p>
+                </div>
+            </div>
+            <div id="pay">Continue Payment →</div>
+            <div id="clear">Clear cart</div>
         </div>
+        
+
+
         <div class = "sidebar">
             <div class = "logo">
-                <img src = "./logo.png">
-                <p style = "font-size: x-large; font-style: italic;">MMStrava</p>
+                <img src = "./logo.png" alt="logo">
+                <p>MMStrava</p>
                 <br><br>
                 <div class = "filters">
                     <br>
-                    <button class = "dropbtn" style = "font-size: 21px;" onclick="hideShow()">Filters≡</button>
+                    <button class = "dropbtn" style = "font-size: 21px;" onclick="hideShow1()">Filters≡</button>
                     <br><br>
                     <div class = "filters-list">
                         <label class = "container">Veg
@@ -68,15 +126,17 @@
                             <span class = "checkmark"></span>
                         </label>
                     </div>
+                </div>
                 <div class = "sidebar-menus">
                     <a href = "#">Appetizers</a>
                     <a href = "#">Main Course</a>
                     <a href = "#">Desserts</a>
                     <a href = "#">Beverages</a>
                 </div>
+                <div id="cs"> 📞 Customer service</div>
+                </div>
             </div>
-        </div>
-            </div>
+            
         </div>
     </body>
 </html>
