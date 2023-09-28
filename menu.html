@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
+        <link rel = stylesheet href = "style.css">
+        <title>Menu 🍴</title>
+
+        <script>
+            function hide(){
+                document.querySelector('.filters-list').style.display = "none";
+            }
+            var count = 0
+            function hideShow(){
+                if(count == 0)
+                {
+                    count = 1;
+                    document.querySelector('.filters-list').style.display = "block";
+                }
+                else
+                {
+                    count = 0;
+                    document.querySelector('.filters-list').style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body onload="hide()">
+        <div class = "topnav">
+            <a href = "#settings" style="font-size: 34px; color: gray">⚙</a>
+            <a href = "#changeview" style = "color: gray">◰</a>
+            <a href = "#cart" style="font-size: 31px">🛒</a>
+            <input type = "text" placeholder="Search...">
+            <button><img src = "./search-icon1.png"></button>
+        </div>
+        <div class = "sidebar">
+            <div class = "logo">
+                <img src = "./logo.png">
+                <p style = "font-size: x-large; font-style: italic;">MMStrava</p>
+                <br><br>
+                <div class = "filters">
+                    <br>
+                    <button class = "dropbtn" style = "font-size: 21px;" onclick="hideShow()">Filters≡</button>
+                    <br><br>
+                    <div class = "filters-list">
+                        <label class = "container">Veg
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+    
+                        <label class = "container">Non-Veg
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+    
+                        <label class = "container">Gluten-Free
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+    
+                        <label class = "container">Vegan
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+    
+                        <label class = "container">Dairy-Free
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+                    </div>
+                <div class = "sidebar-menus">
+                    <a href = "#">Appetizers</a>
+                    <a href = "#">Main Course</a>
+                    <a href = "#">Desserts</a>
+                    <a href = "#">Beverages</a>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </body>
+</html>
