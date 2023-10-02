@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0.3% 0%;
+            padding: 0.1%;
+            width: 100%;
+            height:auto;
+
+            
+        }
+        body{
+            background-image: url('bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 2000px 3700px;
+
+        }
+        html{
+            width:100%;
+            height:100%;
+            
+            ;
+        }
+        p{
+            margin: 0.3% 25%;
+        }
+        h1{
+            color: black;
+            margin: 2% 0%;
+            font-size: xx-large;
+            font-weight:bolder;
+            text-decoration: underline;
+        }
+
+        box{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            overflow: auto;
+            align-items: center;
+        }
+        img {
+            width:20px;
+            height:20px;
+        }
+        div {
+            color: rgb(12, 0, 61);
+            font-size: x-large;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+
+    <script>
+        var dict={
+        "Appetizers":
+        [ //veg nonveg vegan dairy gluten
+        ["Tomato Soup",'dish.png','gwerg','₹325',1,0,0,0,1],  
+        ["Cream of Mushroom Soup",'dish.png','sdgerg','₹325',1,0,0,0,0],
+        ["Sweet Corn Soup",'','','₹325',1,0,0,1,1],
+        ["Hot and Sour Soup",'','','₹325',1,0,1,1,0],
+        ["Garlic Bread",'','','₹325',1,0,0,0,0],
+        ["Signature Nachos",'','','₹325',1,0,0,0,0],
+        ["Chicken Strips",'','','₹325',0,1,0,0,1],
+        ["Korean Fried Chicken",'','','₹325',0,1,0,0,1],
+        ["Veg Spring Rolls",'','','₹325',1,0,1,1,1],
+        ["Deviled Eggs",'','','₹325',0,1,0,1,1],
+        ["French Fries",'','','₹325',1,0,1,1,0],
+        ["Chips and Guacamole",'','','₹325',1,0,1,1,0]
+        ],
+
+        "Main Course":
+        [ //veg nonveg vegan dairy gluten
+        ["Greek Salad",'','','₹325',1,0,0,0,1],  
+        ["Caesar Salad",'','','₹325',0,1,0,0,0],
+        ["Grilled Chicken Salad",'','','₹325',0,1,0,0,1],
+        ["Creamy Alfredo Pasta",'','','₹325',1,0,0,0,0],
+        ["Pesto Pasta",'','','₹325',1,0,0,0,1],
+        ["Veg Burger",'','','₹325',1,0,1,1,1],
+        ["Crispy Chicken Burger",'','','₹325',0,1,0,1,1],
+        ["Pesto Veggie Burger",'','','₹325',1,0,1,1,1],
+        ["Pepporini Pizza Muffins",'','','₹325',0,1,0,0,0],
+        ["Mini Vegetatian Puff Pastry Pizzas",'','','₹325',1,0,0,0,0],
+        ["Tropical Thai Chicken Curry",'','','₹325',0,1,1,1,0],
+        ["Paneer Jalfrezi",'','','₹325',1,0,0,0,1],
+        ["Mughlai Malai Kofta Curry",'','','₹325',1,0,0,0,1],
+        ["Rice Noodles with Wonton",'','','₹325',0,1,0,1,0],
+        ["Chapati",'','','₹325',1,0,0,0,0],
+        ["Chinese Veg Fried Rice",'','','₹325',1,0,0,1,1],
+        ["Thai Fried Rice",'','','₹325',1,0,1,1,1],
+        ["Noodles and Veggies with Peanut Sauce",'','','₹325',1,0,0,0,0],
+        ["Chicken and Miso Ramen Noodle Soup",'','','₹325',0,1,0,1,0],
+        ["Vegetable Fried Wontons",'','','₹325',1,0,0,1,0]
+        ],
+
+        "Desserts":
+        [ //veg nonveg vegan dairy gluten
+        ["Vanilla Ice Cream",'','','₹325',1,0,0,0,0],  
+        ["Lemon & Stawberry Ice Cream",'','','₹325',0,1,0,0,0],
+        ["Cherry Ice Cream",'','','₹325',1,0,0,0,1],
+        ["Coconut & Pomogranate Ice Cream",'','','₹325',1,0,1,1,1],
+        ["Strawberry Cake",'','','₹325',1,0,1,1,0],
+        ["Brownie Cake",'','','₹325',0,1,0,0,1],
+        ["THE Chocolate Cake",'','','₹325',1,0,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Nutella Brownies",'','','₹325',1,0,0,0,0],
+        ["Red Velvet Brownies",'','','₹325',1,0,1,1,1],
+        ["Peanut Butter Chocolate Cheesecake",'','','₹325',1,0,1,1,1],
+        ["Chocolate Explosion Cookies",'','','₹325',1,0,0,1,0]
+        ],
+
+        "Beverages":
+        [ //veg nonveg vegan dairy gluten
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0],
+        ["Texas Brownies",'','','₹325',0,1,0,0,0]
+        ]
+        };
+        for (let keys in dict) {
+            const divm=document.createElement("p");
+            document.body.appendChild(divm);
+            
+            const h=document.createElement("h1");
+            h.innerHTML=keys;
+            divm.appendChild(h);
+            dict[keys].forEach(add);
+            function add(value,index,array){
+                const box=document.createElement("box");
+                divm.appendChild(box);
+                const div = document.createElement("div");
+                div.innerText = (index+1+" . ")+value[0];
+                box.appendChild(div);
+
+                const div1 = document.createElement("div");
+                div1.innerText = value[3]
+                box.appendChild(div1);
+            }
+            /*for (let x in keys){
+
+                const box=document.createElement("box");
+                divm.appendChild(box);
+                
+                *const img= document.createElement("img");
+                img.src=dict[keys][x][1];
+                img.style={height : 20};
+                box.appendChild(img);
+
+                const div0 = document.createElement("div");
+                div0.innerText = n;
+                box.appendChild(div0);
+                n++;
+
+                const div = document.createElement("div");
+                div.innerText = dict[keys][x][0]
+                box.appendChild(div);
+
+                const div1 = document.createElement("div");
+                div1.innerText = dict[keys][x][2]
+                box.appendChild(div1);}
+                */
+            }
+            
+    </script>
+</body>
+</html>
