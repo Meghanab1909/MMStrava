@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv="X-UA-Compatible" content = "IE=edge">
+        <link rel = "stylesheet" href = "style-payment.css"> 
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+        <title>Payment Page</title>
+    </head>
+    <body>
+        <div>
+            <div class = "container">
+                <div class = "logo">
+                    <img src = "logo.png">
+                    <br><br><br><br>
+                    <h3>Kindly choose a payment option</h3>
+                </div>
+                <div class = "payment-buttons">
+                    <br><br><br>
+                    <div>
+                        <button onclick="message()">CASH</button>
+                    </div>
+                    <br>
+                    <div>
+                        <button><a href = "credit-card-getaway.html">CARD</a></button>
+                    </div>
+                    <br>
+                    <div>
+                        <button><a href = "qr-code.html">UPI</a></button>
+                    </div>
+                </div>
+        <script>
+        function message(){
+            alert("Waiter notified! A waiter shall come shortly to assist and complete the payment through cash");
+            alert("You will now be re-directed to the main page");
+            window.location.href = "MMStrava.html";
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Century Gothic";
+}
+body {
+    background-color: lightgrey;
+}
+.container {
+    width: 580px;
+    height: 550px;
+    background-color: rgb(197, 197, 223);;
+    color: black;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.logo{
+    align-items: center;
+}
+.logo img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.payment-buttons button{
+    font-size: large;
+    width: 300px;
+    padding: 2% 0;
+    border-radius: 20px;
+}
+
+a{
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+

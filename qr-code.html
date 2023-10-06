@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>UPI QR CODE</title>
+    <link rel="stylesheet" href="qr-code.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <style>
+    .home{
+      float: right;
+    }
+    a:link {
+    text-decoration: none;
+    }
+
+    a:visited {
+    text-decoration: none;
+    }
+
+    a:hover {
+    text-decoration: none;
+    }
+
+    a:active {
+    text-decoration: none;
+    }
+    .home{
+      color:black;
+      font-size: medium;
+      background-color: white;
+      border: none;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <button class = "home"><a href = "MMStrava.html">HOME ⌂</a></button>
+      <header>
+        <h1>UPI QR CODE</h1>
+        <p>Kindly the amount to be paid by person(s).Please scan it using your upi app and complete the payment.</p>
+      </header>
+      <div class="form">
+        <input type="text" spellcheck="false" placeholder="Rs.">
+        <button>Generate QR Code</button>
+      </div>
+      <div class="qr-code">
+        <img src="" alt="qr-code">
+      </div>
+    </div>
+    <script src="qr-code.js"></script>
+  </body>
+</html>
