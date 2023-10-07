@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv="X-UA-Compatible" content = "IE=edge"> 
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+        <title>Payment Page</title>
+        <style>
+            *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: "Century Gothic";
+        }
+        body {
+            background-color: lightgrey;
+        }
+        .container {
+            width: 580px;
+            height: 550px;
+            background-color: rgb(197, 197, 223);;
+            color: black;
+            padding: 20px;
+            margin: 100px auto;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .logo{
+            align-items: center;
+        }
+        .logo img{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .payment-buttons button{
+            font-size: large;
+            width: 300px;
+            padding: 2% 0;
+            border-radius: 20px;
+        }
+
+        a{
+            color: black;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class = "container">
+                <div class = "logo">
+                    <img src = "logo.png">
+                    <br><br><br><br>
+                    <h3>Kindly choose a payment option</h3>
+                </div>
+                <div class = "payment-buttons">
+                    <br><br><br>
+                    <div>
+                        <button onclick="message()">CASH</button>
+                    </div>
+                    <br>
+                    <div>
+                        <button><a href = "cc.html">CARD</a></button>
+                    </div>
+                    <br>
+                    <div>
+                        <button><a href = "qr.html">UPI</a></button>
+                    </div>
+                </div>
+        <script>
+        function message(){
+            alert("Waiter notified! A waiter shall come shortly to assist and complete the payment through cash");
+            alert("You will now be re-directed to the main page");
+            window.location.href = "index.html";
+        }
+        </script>
+    </body>
+</html>

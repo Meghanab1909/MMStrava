@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale = 1.0">
+        <link rel = stylesheet href = "style.css">
+        <link rel="icon" href="favicon.ico">
+        <title>Menu</title>
+
+        <script>
+            function hide(){
+                document.querySelector('.filters-list').style.display = "none";
+                document.querySelector('.filters').style.display = "none";
+                document.querySelector('.showcart').style.display = "none";
+                document.querySelector('.container2').style.display = "none";
+            }
+            var count=0
+            var count1=0
+            var count2=0
+            var total=0
+            function hideShow1(){
+                if(count1 == 0)
+                {count1 = 1;
+                    document.querySelector('.filters-list').style.display = "block";
+                }
+                else
+                {count1 = 0;
+                    document.querySelector('.filters-list').style.display = "none";
+                }}
+            function hideShow2(){
+                if(count2 == 0)
+                {count2 = 1;
+                    document.querySelector('.showcart').style.display = "block";
+                }
+                else
+                {count2 = 0;
+                    document.querySelector('.showcart').style.display = "none";
+                }}
+            function hidex(){
+                if(count == 0)
+                {count = 1;
+                    document.querySelector('.container1').style.display = "none";
+                    document.querySelector('.container2').style.display = "flex";
+                }
+                else
+                {count = 0;
+                    
+                    document.querySelector('.container1').style.display = "flex";
+                    document.querySelector('.container2').style.display = "none";
+                }}
+            var num=0;
+            function addtocart(item){
+                var app=
+                {"a1":150,
+        "a2":150,
+        "a3":150,
+        "a4":150,
+        "a5":120,
+        "a6":250,
+        "a7":250,
+        "a8":300,
+        "a9":250,
+        "a10":250,
+        "a11":150,
+        "b":200,
+        "b1":250,
+        "b2":250,
+        "b3":300,
+        "b4":350,
+        "b5":350,
+        "b6":275,
+        "b7":300,
+        "b8":325,
+        "b9":275,
+        "b10":275,
+        "b11":300,
+        "b12":300,
+        "b13":300,
+        "b14":325,
+        "b15":30,
+        "b16":100,
+        "b17":315,
+        "b18":325,
+        "b19":325,
+        "b20":325,
+        "b21":325,
+        "c":225,
+        "c1":80,
+        "c2":100,
+        "c3":100,
+        "c4":100,
+        "c5":150,
+        "c6":125,
+        "c7":150,
+        "c8":125,
+        "c9":125,
+        "c10":125,
+        "c11":150,
+        "d":100,
+        "d1":50,
+        "d2":100,
+        "d3":45,
+        "d4":45,
+        "d5":45,
+        "d6":30,
+        "d7":30,
+        "d8":30,
+        "d9":45,
+        "d10":30,
+        "d11":50,
+        "d12":60,
+        "d13":60,
+        "d14":60,
+        "d15":60,
+        "d16":60,
+        "d17":60,
+        "d18":175,
+        "d19":125,
+        "d20":25,
+        "d21":70,
+        "d22":60,
+        "d23":60,
+        "d24":60}
+            total=total;
+            console.log(item);
+            console.log(item.children[0].currentSrc);
+            console.log(item.children[1].children[0].innerText);
+            num+=1;
+            var sel=document.createElement('div');
+            sel.classList.add('cartimg');
+            sel.setAttribute('id',num);
+            var im=document.createElement('img');
+            im.setAttribute('src',item.children[0].currentSrc);
+            var t=document.createElement('div');
+            t.innerHTML=item.children[1].children[0].innerText;
+            var del=document.createElement("button");
+            del.innerText='Delete';
+            del.setAttribute('onclick','del('+num+')');
+            var carti=document.getElementById('title');
+            sel.append(im);
+            sel.append(t);
+            sel.append(del);
+            carti.append(sel);
+            var tt=document.getElementById('total');
+            console.log(Object.keys(app));
+            console.log(app.item);
+            tt.children[0].innerHTML=total;
+        }
+        function del(item){
+            document.getElementById(item).remove();
+            total=total-app[item];
+        }
+        var app=
+        {"a1":150,
+        "a2":150,
+        "a3":150,
+        "a4":150,
+        "a5":120,
+        "a6":250,
+        "a7":250,
+        "a8":300,
+        "a9":250,
+        "a10":250,
+        "a11":150,
+        "b":200,
+        "b1":250,
+        "b2":250,
+        "b3":300,
+        "b4":350,
+        "b5":350,
+        "b6":275,
+        "b7":300,
+        "b8":325,
+        "b9":275,
+        "b10":275,
+        "b11":300,
+        "b12":300,
+        "b13":300,
+        "b14":325,
+        "b15":30,
+        "b16":100,
+        "b17":315,
+        "b18":325,
+        "b19":325,
+        "b20":325,
+        "b21":325,
+        "c":225,
+        "c1":80,
+        "c2":100,
+        "c3":100,
+        "c4":100,
+        "c5":150,
+        "c6":125,
+        "c7":150,
+        "c8":125,
+        "c9":125,
+        "c10":125,
+        "c11":150,
+        "d":100,
+        "d1":50,
+        "d2":100,
+        "d3":45,
+        "d4":45,
+        "d5":45,
+        "d6":30,
+        "d7":30,
+        "d8":30,
+        "d9":45,
+        "d10":30,
+        "d11":50,
+        "d12":60,
+        "d13":60,
+        "d14":60,
+        "d15":60,
+        "d16":60,
+        "d17":60,
+        "d18":175,
+        "d19":125,
+        "d20":25,
+        "d21":70,
+        "d22":60,
+        "d23":60,
+        "d24":60}
+        </script>
+    </head>
+    <body onload="hide()">
+
+        <div class = "topnav">
+            <div class="extras">
+                <button type="button" id="view" onclick="hidex()">◰</button>
+                <button type="button" id="cart"  onclick="hideShow2()">🛒</button>
+            </div>
+        </div>
+
+        <div class="container1"id="a">
+            <div class = "appetizers" >
+                <p style = "font-size: xx-large; align-items: center; padding-bottom: 3%"> ■ - ■ - ■ - ■ - ■ - ■ - ■ - ■ - ■ APPETIZERS ■ - ■ - ■ - ■ - ■ - ■ - ■ </p>
+                <div class = "single-menu"id="a1"> 
+                    <img src = "images/tomato-soup.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Tomato soup<span>₹150</span></h4>
+                        <p>
+                            Rich and fragment tomato soup, flavoured with plenty of garlic,
+                            oregano and fresh garlic
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a1)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu" id="a2">
+                    <img src = "images/mushroom-soup.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Cream of Mushroom Soup<span>₹150</span></h4>
+                        <p>
+                            A classic french style creamy soup, made with mushroom served
+                            with garlic bread
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a2)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu" id="a3">
+                    <img src = "images/sweetcorn-soup.png" alt = "">
+                    <div class = "menu-content"> 
+                        <h4>Sweet Corn Soup<span>₹150</span></h4>
+                        <p>
+                            A simple, comforting soup made with tender corn kernels, spice 
+                            and herbs
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a3)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu" id="a4">
+                    <img src = "images/hotsour-soup.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Hot and Sour Soup<span>₹150</span></h4>
+                        <p>
+                            A spicy, sour and hot soup which is a simple yet incredibly 
+                            flavorful dish made with lots of fresh veggies and vibrant spices
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a4)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="a5">
+                    <img src = "images/garlic-bread.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Garlic Bread<span>₹120</span></h4>
+                        <p>
+                            Toasty, buttery, herby, covered in a dusting of salty parmesan cheese,
+                            piping hot and fresh out of the oven
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a5)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="a6">
+                    <img src = "images/nachos.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Signature Nachos<span>₹250</span></h4>
+                        <p>
+                            Corn chips topped with beans and nacho cheese, lettuce, corn, red and 
+                            yellow peppers, spring onions, jalapenos, olives and sour cream servced
+                            with salsa and queso
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a6)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="a7">
+                    <img src = "images/chicken-strips.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Chicken Strips<span>₹250</span></h4>
+                        <p>
+                            Boneless chicken tenders seasoned to perfection, freshly breaded, served
+                            with our signature special sauce
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a7)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="a8">
+                    <img src = "images/korean-fried-chicken.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Korean Fried Chicken<span>₹300</span></h4>
+                        <p>
+                            Crispy fried chicken that is coated with sticky, spicy and sweet sauce
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a8)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="a9">
+                    <img src = "images/spring-rolls.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Veg Spring Rolls<span>₹250</span></h4>
+                        <p>A blend of fresh cabbage, carrots, and onions with
+                            a hint of seasoning, wrapped in a deliciously flaky
+                            and crispy spring wrap
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a9)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="a10">
+                    <img src = "images/deviled-eggs.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Deviled Eggs<span>₹250</span></h4>
+                        <p>
+                            Halved hard-boiled eggs that have had their boiled
+                            yolks removed and blended with ingredients such as mayonnaise,
+                            mustard, pickle relish, and seasonings into a smooth paste,
+                            which is then added back to the cavities of the egg whites
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a10)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="a11">
+                    <img src = "images/french-fries.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>French Fries<span>₹150</span></h4>
+                        <p>
+                            Also known as finger chips. Deep fried potato strips
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(a11)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b">
+                    <img src = "images/chips-guacamole.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Chips and Guacamole<span>₹200</span></h4>
+                        <p>
+                            Fresh white corn tortilla chips with our freshly-made guacamole. Made with avocados, fresh lime juice,
+                            jalapeños, tomatoes, onions and corriander
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "maincourse" >
+                <p style = "font-size: xx-large; align-items: center; padding-bottom: 3%">■ - ■ - ■ - ■ - ■ - ■ - ■ - ■  MAIN COURSE ■ - ■ - ■ - ■ - ■ - ■ - ■</p>
+                <div class = "single-menu" id="b1">
+                    <img src = "images/greek-salad.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Greek Salad<span>₹250</span></h4>
+                        <p>
+                            Fresh greens, tomatoes, cucumbers, red cabbage, carrots, feta cheese, olives,
+                            pepperoncinis with a homemade greek vinaigrette dressing and grilled
+                            pita
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b1)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b2">
+                    <img src = "images/caesar-salad.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Caesar Salad<span>₹250</span></h4>
+                        <p>
+                            Fresh crisp, romaine lettice is tossed with crutons and a dressing made of olive oil, egg yolks,
+                            garlic and mustard
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b2)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b3">
+                    <img src = "images/grilled-chicken-salad.png" alt = "">
+                    <div class = "menu-content"> 
+                        <h4>Grilled Chicken Salad<span>₹300</span></h4>
+                        <p>
+                            A lovely combination of grilled chicken, lettuce leaves and cheese, tossed in a flavoursome vinaigrette
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b3)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b4">
+                    <img src = "images/alfredo.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Fettuccine Alfredo<span>₹350</span></h4>
+                        <p>
+                            Fettuccine pasta tossed in a rich creamy delicious garlic parmesan cheese sauce
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b4)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b5">
+                    <img src = "images/pesto-pasta.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Pesto Pasta<span>₹350</span></h4>
+                        <p>
+                            Rigatoni pasta tossed in basil pesto sauce which consists of crushed garlic, pine nuts, 
+                            fresh basil leaves and Parmesan cheese, all blended with olive oil.
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b5)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b6">
+                    <img src = "images/veggie-burger.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Veg Burger<span>₹275</span></h4>
+                        <p>
+                            Delicious patty made with black beans, brown rice, and vegetables between two burger buns
+                            served with lettuce, tomatoes, cheese and our signature burger sauce
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b6)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b7">
+                    <img src = "images/crispy-chicken-burger.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Crispy Chicken Burger<span>₹300</span></h4>
+                        <p>
+                            Crispy chicken patty served between two burger buns served with coleslaw, lettuce, pickles,
+                            cheese and our signature burger sauce
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b7)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b8">
+                    <img src = "images/pesto-pizza.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Pesto Vegetable Pizza<span>₹325</span></h4>
+                        <p>
+                            Pizza topped with red bell pepper, baby spinach, onions, pesto sauce, sundried tomatoes,
+                            and roasted garlic
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b8)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b9">
+                    <img src = "images/pizza-muffins.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Pepperoni Pizza Muffins<span>₹275</span></h4>
+                        <p>
+                            Pepperoni pizza with a twist, in a muffin form. Made of pizza crust, pizza sauce, cheese,
+                            and pepperoni
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b9)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b10">
+                    <img src = "images/puff-pastry-pizza.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Mini Puff Pastry Pizzas<span>₹275</span></h4>
+                        <p>
+                            Pizza made with puff pastry with cheese and pizza sauce, topped off with capsicum, onions, olives
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b10)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b11">
+                    <img src = "images/thai-curry.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Tropical Thai Chicken Curry<span>₹300</span></h4>
+                        <p>
+                            A delicious coconut, creamy, spicy chicken curry and sweet pineapple and mango chunks
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b11)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b12">
+                    <img src = "images/paneer-jalfrezi.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Paneer Jalfrezi<span>₹300</span></h4>
+                        <p>
+                            A vegetable stir fry recipe made with cottage cheese, vegetables like capsicum, and a few
+                            Indian spices
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b12)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b13">
+                    <img src = "images/kofta-curry.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Mughlai Malai Kofta Curry<span>₹300</span></h4>
+                        <p>
+                            Koftas or croquettes made with spiced potato and paneer steeped in a creamy tomato curry
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b13)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b14">
+                    <img src = "images/wonton-noodle-soup.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Rice Noodles with Wontons<span>₹325</span></h4>
+                        <p>
+                            Rice noodles in a wonton soup. Delicious wontons in a hot soup with bok choy and thin rice noodles.
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b14)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b15">
+                    <img src = "images/chapati.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Chapati<span>₹30</span></h4>
+                        <p>
+                            Whole-wheat flour, mixed into dough and are cooked on a flat skillet
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b15)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b16">
+                    <img src = "images/jeera-rice.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Jeera Rice<span>₹100</span></h4>
+                        <p>
+                            Basmati rice tampered with jeera (cumin seeds), pepper, cloves and bay leaf
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b16)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b17">
+                    <img src = "images/chinese-fried-rice.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Chinese Fried Rice<span>₹315</span></h4>
+                        <p>
+                            Made with a hearty mix of fresh vegetables, green onions, seasonings and spices for an incredibly
+                            flavorful fried rice dish
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b17)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b18">
+                    <img src = "images/thai-fried-rice.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Thai Fried Rice<span>₹325</span></h4>
+                        <p>
+                            A delicious stir-fried rice dish with lots of thai basil, bird’s eye chilies, veggies, and sauces
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b18)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b19">
+                    <img src = "images/salmon-fried-rice.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Salmon Fried Rice<span>₹325</span></h4>
+                        <p>
+                            A flavourful and delicious rice dish with salted salmon, eggs, and scallions
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b19)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b20">
+                    <img src = "images/peanut-noodles.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Noodles with Peanut Sauce<span>₹325</span></h4>
+                        <p>
+                            A delicious noodle dish with rice noodles, tofu, veggies and a creamy peanut sauce
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b20)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="b21">
+                    <img src = "images/miso-ramen.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Chicken and Miso Ramen<span>₹325</span></h4>
+                        <p>
+                            A comforting and satisfying ramen bowl loaded with tender chicken, fresh veggies, and savory miso broth
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(b21)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c">
+                    <img src = "images/wonton.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Vegetable Fried Wontons<span>₹225</span></h4>
+                        <p>
+                            Wonton wrappers conceal a medley of veggies to make delicious and crispy veggie wontons
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "desserts" >
+                <p style = "font-size: xx-large; align-items: center; padding-bottom: 3%">■ - ■ - ■ - ■ - ■ - ■ - ■ - ■ - ■  DESSERTS ■ - ■ - ■ - ■ - ■ - ■ - ■ - ■</p>
+                <div class = "single-menu" id="c1">
+                    <img src = "images/vanilla-icecream.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Vanilla Ice Cream<span>₹80</span></h4>
+                        <p>
+                            Ice cream tastes just like the old-fashioned ice cream you get at a fancy 
+                            ice cream parlor
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c1)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c2">
+                    <img src = "images/strawberry-lemon-icecream.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Strawberry-Lemon Ice Cream <span>₹100</span></h4>
+                        <p>
+                            One of our signature ice creams, our very special concoction of flavours
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c2)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c3">
+                    <img src = "images/cherry-icecream.png" alt = "">
+                    <div class = "menu-content"> 
+                        <h4>Cherry Ice Cream<span>₹100</span></h4>
+                        <p>
+                            A simple ice cream that combines real cream and fine cherries into a rich
+                            and creamy treat that’s full of fruity flavor
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c3)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c4">
+                    <img src = "images/pomegranate-coconut-icecream.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Coconut-Pomegranate Sorbet<span>₹100</span></h4>
+                        <p>
+                            A refreshing treat of coconut and pomegranate in a delicious sorbet
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c4)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c5">
+                    <img src = "images/strawberry-upside-down-cake.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Strawberry Skillet Cake <span>₹150</span></h4>
+                        <p>
+                            A delicious twist on a classic pineapple upside down cake is this strawberry upside 
+                            down cake or as we like to call it 'strawberry skillet cake'
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c5)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c6">
+                    <img src = "images/brownies.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Signature Brownies <span>₹125</span></h4>
+                        <p>
+                            Our signature decadent chocolate cake with a soft center and crusty corners
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c6)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c7">
+                    <img src = "images/chocolate-cake.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Classic Chocolate Cake<span>₹150</span></h4>
+                        <p>
+                            The perfect chocolate fudge cake covered in a creamy real chocolate 
+                            buttercream
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c7)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c8">
+                    <img src = "images/texas-brownies.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Texas Brownies<span>₹125</span></h4>
+                        <p>
+                            Our fun twist to the classic texas sheet cake in the form of a brownie topped
+                            with peanut butter
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c8)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c9">
+                    <img src = "images/nutella-brownies.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Nutella Brownies<span>₹125</span></h4>
+                        <p>
+                            Brownies filled with the classic nutella hazelnut spread, topped with hazelnuts
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c9)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c10">
+                    <img src = "images/red-velvet-brownies.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Red Velvet Brownies<span>₹125</span></h4>
+                        <p>
+                            A bite-size brownie version of the classic red velvet cake
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c10)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="c11">
+                    <img src = "images/chocolate-peanut-butter-cheesecake.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Chocolate-Peanut Butter Cheesecake<span>₹150</span></h4>
+                        <p>
+                            A delectable dessert of rich chocolate and creamy peanut butter in a heavenly chocolate & peanut butter cheesecake
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(c11)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu" id="d">
+                    <img src = "images/chocolate-explosion-cookies.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Chocolate Explosion Cookies<span>₹100</span></h4>
+                        <p>
+                            A delicious, gooey, chocolatey center between two vanilla cookies
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "beverages" >
+                <p style = "font-size: xx-large; align-items: center; padding-bottom: 3%">■ - ■ - ■ - ■ - ■ - ■ - ■ - ■ - ■ BEVERAGES ■ - ■ - ■ - ■ - ■ - ■ - ■</p>
+                <div class = "single-menu" id="d1">
+                    <img src = "images/water-bottle.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Mineral Water Bottle . . . . . . . . <span>₹50</span></h4>
+                        <p>
+                            500ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d1)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d2">
+                    <img src = "images/sparkling-water.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Sparkling Water . . . . . . . . . . . <span>₹100</span></h4>
+                        <p>
+                            330ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d2)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d3">
+                    <img src = "images/coke.png" alt = "">
+                    <div class = "menu-content"> 
+                        <h4>Coco~Cola . . . . . . . . . . . . . . . . <span>₹45</span></h4>
+                        <p>
+                            330ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d3)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d4">
+                    <img src = "images/diet-coke.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Diet Coco~Cola . . . . . . . . . . . . . <span>₹45</span></h4>
+                        <p>
+                            330ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d4)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d5">
+                    <img src = "images/pepsi.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Pepsi . . . . . . . . . . . . . . . . . . . . . <span>₹45</span></h4>
+                        <p>
+                            330ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d5)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d6">
+                    <img src = "images/thumsup.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Thumsup . . . . . . . . . . . . . . . . . .<span>₹30</span></h4>
+                        <p>
+                            250ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d6)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d7">
+                    <img src = "images/sprite.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Sprite . . . . . . . . . . . . . . . . . . . . <span>₹30</span></h4>
+                        <p>
+                            250ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d7)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d8">
+                    <img src = "images/7up.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>7Up . . . . . . . . . . . . . . . . . . . . . . <span>₹30</span></h4>
+                        <p>
+                            250ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d8)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d9">
+                    <img src = "images/fanta.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Fanta . . . . . . . . . . . . . . . . . . . . . <span>₹45</span></h4>
+                        <p>
+                            330ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d9)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d10">
+                    <img src = "images/mirinda.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Mirinda . . . . . . . . . . . . . . . . . . . <span>₹30</span></h4>
+                        <p>
+                            250ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d10)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d11">
+                    <img src = "images/badam-milk.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Badam Milk . . . . . . . . . . . . . . . <span>₹50</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d11)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d12">
+                    <img src = "images/chocolate-milkshake.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Chocolate Milkshake . . . . . . . .<span>₹60</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d12)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d13">
+                    <img src = "images/strawberry-milkshake.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Strawberry Milkshake . . . . . . . . <span>₹60</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d13)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d14">
+                    <img src = "images/vanilla-milkshake.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Vanilla Milkshake . . . . . . . . . . . <span>₹60</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d14)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d15">
+                    <img src = "images/strawberry-banana-smoothie.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Strawberry Banana Smoothie. .<span>₹60</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d15)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d16">
+                    <img src = "images/chocolate-smoothie.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Cocoa, Peanut Butter Smoothie<span>₹60</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d16)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d17">
+                    <img src = "images/mixed-berry-smoothie.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Mixed Berry Smoothie. . . . . . . . <span>₹60</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d17)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d18">
+                    <img src = "images/pumpkin-spiced-latte.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Pumpkin Spiced Latte. . . . . . <span>₹175</span></h4>
+                        <p>
+                            200ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d18)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d19">
+                    <img src = "images/iced-coffee.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Iced Coffee. . . . . . . . . . . . . . .<span>₹125</span></h4>
+                        <p>
+                            200ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d19)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d20">
+                    <img src = "images/chai.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Masala Chai. . . . . . . . . . . . . . .<span>₹25</span></h4>
+                        <p>
+                            100ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d20)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d21">
+                    <img src = "images/pina-colada.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Pina Colada. . . . . . . . . . . . . . . .<span>₹70</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d21)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d22">
+                    <img src = "images/virgin-mojito.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Virgin Mojito. . . . . . . . . . . . . . .<span>₹60</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d22)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d23">
+                    <img src = "images/blue-lagoon.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Blue Lagoon. . . . . . . . . . . . . . . .<span>₹60</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d23)">🛒</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = "single-menu"id="d24">
+                    <img src = "images/strawberry-lemonade.png" alt = "">
+                    <div class = "menu-content">
+                        <h4>Strawberry Lemonade. . . . . . .<span>₹60</span></h4>
+                        <p>
+                            300ml
+                        </p>
+                        <div id="check">
+                            <button onclick="addtocart(d24)">🛒</button>
+                        </div>
+                    </div>
+        </div>
+            </div>
+        </div>
+
+        <div class="container2">
+            <p>
+                <div id="myid">Appetizers</div>
+                <box><div id="div">1 . Tomato Soup</div><div id="div">₹150</div></box>
+                <box><div id="div">2 . Cream of Mushroom Soup</div><div id="div">₹150</div></box>
+                <box><div id="div">3 . Sweet Corn Soup</div><div id="div">₹150</div></box>
+                <box><div id="div">4 . Hot and Sour Soup</div><div id="div">₹150</div></box>
+                <box><div id="div">5 . Garlic Bread</div><div id="div">₹120</div></box>
+                <box><div id="div">6 . Signature Nachos</div><div id="div">₹250</div></box>
+                <box><div id="div">7 . Chicken Strips</div><div id="div">₹250</div></box>
+                <box><div id="div">8 . Korean Fried Chicken</div><div id="div">₹300</div></box>
+                <box><div id="div">9 . Veg Spring Rolls</div><div id="div">₹250</div></box>
+                <box><div id="div">10 . Deviled Eggs</div><div id="div">₹250</div></box>
+                <box><div id="div">11 . French Fries</div><div id="div">₹150</div></box>
+                <box><div id="div">12 . Chips and Guacamole</div><div id="div">₹200</div></box>
+                <img src="760091.png" height="100" width="5000" alt="">
+            </p>
+            <p>
+                <div id="myid">Main Course</div><box><div id="div">1 . Greek Salad</div><div id="div">₹250</div></box>
+                <box><div id="div">2 . Caesar Salad</div><div id="div">₹250</div></box>
+                <box><div id="div">3 . Grilled Chicken Salad</div><div id="div">₹300</div></box>
+                <box><div id="div">4 . Fettuccine Alfredo</div><div id="div">₹350</div></box>
+                <box><div id="div">5 . Pesto Pasta</div><div id="div">₹350</div></box>
+                <box><div id="div">6 . Veg Burger</div><div id="div">₹275</div></box>
+                <box><div id="div">7 . Crispy Chicken Burger</div><div id="div">₹300</div></box>
+                <box><div id="div">8 . Pesto Vegetable Pizza</div><div id="div">₹325</div></box>
+                <box><div id="div">9 . Pepporini Pizza Muffins</div><div id="div">₹275</div></box>
+                <box><div id="div">10 . Mini Vegetatian Puff Pastry Pizzas</div><div id="div">₹275</div></box>
+                <box><div id="div">11 . Tropical Thai Chicken Curry</div><div id="div">₹300</div></box>
+                <box><div id="div">12 . Paneer Jalfrezi</div><div id="div">₹300</div></box>
+                <box><div id="div">13 . Mughlai Malai Kofta Curry</div><div id="div">₹300</div></box>
+                <box><div id="div">14 . Rice Noodles with Wonton</div><div id="div">₹325</div></box>
+                <box><div id="div">15 . Chapati</div><div id="div">₹30</div></box>
+                <box><div id="div">16 . Jeera Rice</div><div id="div">₹100</div></box>
+                <box><div id="div">17 . Chinese Veg Fried Rice</div><div id="div">₹315</div></box>
+                <box><div id="div">18 . Thai Fried Rice</div><div id="div">₹325</div></box>
+                <box><div id="div">19 . Salmon Fried Rice</div><div id="div">₹325</div></box>
+                <box><div id="div">20 . Noodles with Peanut Sauce</div><div id="div">₹325</div></box>
+                <box><div id="div">21 . Chicken and Miso Ramen</div><div id="div">₹325</div></box>
+                <box><div id="div">22 . Vegetable Fried Wontons</div><div id="div">₹225</div></box>
+                <img src="760091.png" height="100" width="5000" alt="">
+            </p>
+            <p>
+                <div id="myid">Desserts</div>
+                <box><div id="div">1 . Vanilla Ice Cream</div><div id="div">₹80</div></box>
+                <box><div id="div">2 . Stawberry Lemon Ice Cream</div><div id="div">₹100</div></box>
+                <box><div id="div">3 . Cherry Ice Cream</div><div id="div">₹100</div></box>
+                <box><div id="div">4 . Coconut-Pomegranate Sorbet</div><div id="div">₹100</div></box>
+                <box><div id="div">5 . Strawberry Skillet Cake</div><div id="div">₹150</div></box>
+                <box><div id="div">6 . Signature Brownies</div><div id="div">₹125</div></box>
+                <box><div id="div">7 . Classic Chocolate Cake</div><div id="div">₹150</div></box>
+                <box><div id="div">8 . Texas Brownies</div><div id="div">₹125</div></box>
+                <box><div id="div">9 . Nutella Brownies</div><div id="div">₹125</div></box>
+                <box><div id="div">10 . Red Velvet Brownies</div><div id="div">₹125</div></box>
+                <box><div id="div">11 . Peanut Butter Chocolate Cheesecake</div><div id="div">₹150</div></box>
+                <box><div id="div">12 . Chocolate Explosion Cookies</div><div id="div">₹100</div></box>
+                <img src="760091.png" height="100" width="5000" alt="">
+            </p>
+            <p>
+                <div id="myid">Beverages</div>
+                <box><div id="div">1 . Mineral Water Bottle</div><div id="div">₹50</div></box>
+                <box><div id="div">2 . Sparkling Water</div><div id="div">₹100</div></box>
+                <box><div id="div">3 . Coco~Cola</div><div id="div">₹45</div></box>
+                <box><div id="div">4 . Diet Coco~Cola</div><div id="div">₹45</div></box>
+                <box><div id="div">5 . Pepsi</div><div id="div">₹45</div></box>
+                <box><div id="div">6 . Thumsup</div><div id="div">₹30</div></box>
+                <box><div id="div">7 . Sprite</div><div id="div">₹30</div></box>
+                <box><div id="div">8 . 7Up</div><div id="div">₹30</div></box>
+                <box><div id="div">9 . Fanta</div><div id="div">₹45</div></box>
+                <box><div id="div">10 . Mirinda</div><div id="div">₹30</div></box>
+                <box><div id="div">11 . Badam Milk</div><div id="div">₹50</div></box>
+                <box><div id="div">12 . Chocolate Milkshake</div><div id="div">₹60</div></box>
+                <box><div id="div">13 . Strawberry Milkshake</div><div id="div">₹60</div></box>
+                <box><div id="div">14 . Vanilla Milkshake</div><div id="div">₹60</div></box>
+                <box><div id="div">15 . Strawberry Banana Smoothie</div><div id="div">₹60</div></box>
+                <box><div id="div">16 . Cocoa, Peanut Butter Smoothie</div><div id="div">₹60</div></box>
+                <box><div id="div">17 . Mixed Berry Smoothie</div><div id="div">₹60</div></box>
+                <box><div id="div">18 . Pumpkin Spiced Latte</div><div id="div">₹175</div></box>
+                <box><div id="div">19 . Iced Coffee</div><div id="div">₹125</div></box>
+                <box><div id="div">20 . Masala Chai</div><div id="div">₹25</div></box>
+                <box><div id="div">21 . Pina Colada</div><div id="div">₹70</div></box>
+                <box><div id="div">22 . Virgin Mojito</div><div id="div">₹60</div></box>
+                <box><div id="div">23 . Blue Lagoon</div><div id="div">₹60</div></box>
+                <box><div id="div">24 . Strawberry Lemonade</div><div id="div">₹60</div></box>
+                <img src="760091.png" height="100" width="5000" alt="">
+            </p>
+        </div>
+
+        <div class="showcart">
+            <div id="head">🛒 My Cart </div><hr/>
+            <div id="title"></div>
+            <div id="total"> Total: <span></span></div>
+            <div class="drop">
+                <button class="button" onclick="window.location.href = 'payment.html';"">Continue Payment</button>
+            </div>
+        </div>
+
+        <div class = "sidebar">
+            <div class = "logo">
+                <img src = "./logo.png" alt="logo">
+                <p>MMStrava</p>
+                <br><br>
+                <div class = "filters">
+                    <br>
+                    <button class = "dropbtn" style = "font-size: 21px;" onclick="hideShow1()">Filters≡</button>
+                    <br><br>
+                    <div class = "filters-list">
+                        <label class = "container">Veg
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+    
+                        <label class = "container">Non-Veg
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+    
+                        <label class = "container">Gluten-Free
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+    
+                        <label class = "container">Vegan
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+    
+                        <label class = "container">Dairy-Free
+                            <input type = "checkbox">
+                            <span class = "checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class = "sidebar-menus">
+                    <a href = "#a">Appetizers</a>
+                    <a href = "#b">Main Course</a>
+                    <a href = "#c">Desserts</a>
+                    <a href = "#d">Beverages</a>
+                </div>
+                <div id="cs"> 📞 Customer service</div>
+                </div>
+            </div>
+            
+        
+    </body>
+</html>
